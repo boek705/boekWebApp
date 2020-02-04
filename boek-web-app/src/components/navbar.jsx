@@ -3,11 +3,16 @@ import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
+import IconButton from "@material-ui/core/IconButton";
+import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
+import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+import HomeIcon from "@material-ui/icons/Home";
+import CategoryIcon from "@material-ui/icons/Category";
+
+import Tooltip from "@material-ui/core/Tooltip";
 
 const customLinkStyle = {
-  margin: "1%",
   color: "white",
   textDecoration: "none"
 };
@@ -31,30 +36,46 @@ export default function ButtonAppBar() {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
+          {/* <IconButton
+            edge="start"
+            className={classes.menuButton}
+            color="inherit"
+            aria-label="menu"
+          >
+            <MenuIcon />
+          </IconButton> */}
           <Typography variant="h6" className={classes.title}>
             boek
           </Typography>
-          <Button color="inherit">
-            <Link style={customLinkStyle} to="/home">
-              HOME
-            </Link>
-          </Button>
-          <Button color="inherit">
-            <Link style={customLinkStyle} to="/categories">
-              CATEGORIES
-            </Link>
-          </Button>
-          <Button color="inherit">
-            <Link style={customLinkStyle} to="/cart">
-              CART
-            </Link>
-          </Button>
-          <Button color="inherit">
-            <Link style={customLinkStyle} to="/profile">
-              PROFILE
-            </Link>
-          </Button>
-          {/* <Button color="inherit">Login</Button> */}
+          {/* <Button color="inherit"> */}
+          <Link style={customLinkStyle} to="/home">
+            <Tooltip title="Home">
+              <IconButton color="inherit">
+                <HomeIcon />
+              </IconButton>
+            </Tooltip>
+          </Link>
+          <Link style={customLinkStyle} to="/categories">
+            <Tooltip title="Categories">
+              <IconButton color="inherit">
+                <CategoryIcon />
+              </IconButton>
+            </Tooltip>
+          </Link>
+          <Link style={customLinkStyle} to="/cart">
+            <Tooltip title="Cart">
+              <IconButton color="inherit">
+                <AddShoppingCartIcon />
+              </IconButton>
+            </Tooltip>
+          </Link>
+          <Link style={customLinkStyle} to="/profile">
+            <Tooltip title="Profile">
+              <IconButton color="inherit">
+                <AccountCircleIcon />
+              </IconButton>
+            </Tooltip>
+          </Link>
         </Toolbar>
       </AppBar>
     </div>

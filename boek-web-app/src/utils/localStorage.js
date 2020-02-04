@@ -20,8 +20,9 @@ const LocalStorage = {
   getGoogleUser() {
     return getItem("google_user");
   },
-  setGoogleUser(user) {
+  setGoogleUser(user, callback) {
     setItem("google_user", user);
+    callback();
   },
   removeGoogleUser() {
     window.localStorage.removeItem("google_user");
