@@ -9,7 +9,6 @@ import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import HomeIcon from "@material-ui/icons/Home";
 import CategoryIcon from "@material-ui/icons/Category";
-
 import Tooltip from "@material-ui/core/Tooltip";
 
 const customLinkStyle = {

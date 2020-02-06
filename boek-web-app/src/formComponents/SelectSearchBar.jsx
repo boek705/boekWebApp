@@ -6,7 +6,7 @@ const SelectSearchBar = props => {
     <Select
       isDisabled={props.disabled}
       className="select-search-box"
-      placeholder="What would you like to read today?"
+      placeholder={props.placeholder}
       value={props.value}
       options={props.options}
       onChange={val => props.handleChange(val.value)}

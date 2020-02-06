@@ -22,6 +22,10 @@ class Profile extends React.Component {
           <p>Name:{this.state.currentUser.name}</p>
           <p>Email:{this.state.currentUser.email}</p>
           <img src={this.state.currentUser.imageUrl} alt="" />
+          <p>Issued books are:</p>
+          <p>{this.state.currentUser.issued}</p>
+          <p>Your contribution:</p>
+          <p>{this.state.currentUser.contributions}</p>
         </React.Fragment>
       );
     } else {
