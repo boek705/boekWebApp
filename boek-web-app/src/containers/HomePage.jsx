@@ -20,6 +20,18 @@ class HomePage extends React.Component {
     });
   }
 
+  getSearchSelectOptions = () => {
+    //used to pass the options props to the select search bar
+    let options = [];
+    this.state.listOfBooks.forEach(item => {
+      let obj = {};
+      obj.label = item.name;
+      obj.value = item.isbn;
+      options.push(obj);
+    });
+    return options;
+  };
+
   render() {
     return (
       <Grid
@@ -30,7 +42,18 @@ class HomePage extends React.Component {
         direction="column"
       >
         <div style={{ width: "35%", margin: "3%" }}>
-          <SelectSearchBar placeholder="What would you like to read today?" />
+          <SelectSearchBar
+            placeholder="What would you like to read today?"
+            options={
+              this.getSearchSelectOptions()
+              // { label: "a", value: "a" },
+              // { label: "b", value: "a" },
+              // { label: "d", value: "a" },
+              // { label: "h", value: "a" },
+              // { label: "j", value: "a" },
+              // { label: "k", value: "a" }
+            }
+          />
         </div>
         {/* <Table /> */}
         <BooksTable listOfBooks={this.state.listOfBooks} />

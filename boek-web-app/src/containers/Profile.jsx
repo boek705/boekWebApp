@@ -1,6 +1,7 @@
 import React from "react";
 import LocalStorage from "../utils/localStorage";
 import Button from "@material-ui/core/Button";
+import Grid from "@material-ui/core/Grid";
 
 class Profile extends React.Component {
   constructor(props) {
@@ -19,13 +20,26 @@ class Profile extends React.Component {
     if (this.state.currentUser) {
       return (
         <React.Fragment>
-          <p>Name:{this.state.currentUser.name}</p>
+          {/* <p>Name:{this.state.currentUser.name}</p>
           <p>Email:{this.state.currentUser.email}</p>
           <img src={this.state.currentUser.imageUrl} alt="" />
           <p>Issued books are:</p>
           <p>{this.state.currentUser.issued}</p>
           <p>Your contribution:</p>
-          <p>{this.state.currentUser.contributions}</p>
+          <p>{this.state.currentUser.contributions}</p> */}
+          <Grid
+            container
+            direction="row"
+            justify="center"
+            style={{ height: "100%" }}
+          >
+            <Grid container direction="column" justify="center">
+              <p>asas</p>
+            </Grid>
+            <Grid container direction="column" justify="center">
+              <p>dddddddddddddddddddddd</p>
+            </Grid>
+          </Grid>
         </React.Fragment>
       );
     } else {
@@ -38,6 +52,8 @@ class Profile extends React.Component {
       <React.Fragment>
         {this.getCurrentUserData()}
         <Button
+          color="primary"
+          variant="contained"
           onClick={() => {
             if (this.state.currentUser) {
               LocalStorage.removeGoogleUser();

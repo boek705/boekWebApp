@@ -14,13 +14,7 @@ class BooksTable extends React.Component {
       modalState: false,
       bookDescription: null
     },
-    data: [
-      { isbn: "a", name: "a", author: "a", category: "a" },
-      { isbn: "a", name: "a", author: "a", category: "a" },
-      { isbn: "a", name: "a", author: "a", category: "a" },
-      { isbn: "a", name: "a", author: "a", category: "a" },
-      { isbn: "a", name: "a", author: "a", category: "a" }
-    ]
+    data: []
   };
 
   handleModalClose = () => {
@@ -34,12 +28,13 @@ class BooksTable extends React.Component {
       {
         Header: "ISBN",
         accessor: "isbn",
-        style: { textAlign: "center" }
+        style: { textAlign: "center" },
+        width: 150
       },
       {
         Header: "Name",
-        accessor: "name",
-        style: { textAlign: "center" }
+        accessor: "name"
+        // style: { textAlign: "center" }
       },
       {
         Header: "Author",
@@ -47,12 +42,14 @@ class BooksTable extends React.Component {
       },
       {
         Header: "Category",
-        accessor: "category"
+        accessor: "category",
+        width: 130
       },
       {
         Header: "Action",
         Cell: prop => {
           // console.log(prop);
+
           return (
             <React.Fragment>
               <Tooltip title="Read more">
@@ -77,7 +74,9 @@ class BooksTable extends React.Component {
               </Button>
             </React.Fragment>
           );
-        }
+        },
+        width: 130,
+        style: { textAlign: "center" }
       }
     ];
 
